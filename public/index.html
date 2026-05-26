@@ -1,5 +1,70 @@
 <!DOCTYPE html>
-<html><body style='background:black;color:white'>
-<h1>GHOST RAW HUB</h1>
-<a href='update.html'>Update</a>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEX UpdatePanel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="phone">
+    <section id="loginScreen" class="screen active">
+      <div class="logo">HEX</div>
+      <h1>UpdatePanel</h1>
+      <p class="sub">Secure raw config manager</p>
+
+      <div class="card">
+        <label>Admin Password</label>
+        <input id="password" type="password" placeholder="Enter password" />
+        <button onclick="login()">Login</button>
+        <p id="loginMsg" class="msg"></p>
+      </div>
+    </section>
+
+    <section id="homeScreen" class="screen">
+      <div class="top">
+        <div>
+          <h2>Home</h2>
+          <p>GHOST RAW HUB</p>
+        </div>
+        <span class="badge">ONLINE</span>
+      </div>
+
+      <div class="card glow">
+        <h3>Raw Config Link</h3>
+        <p id="rawLink">/raw/config.json</p>
+        <button onclick="copyRaw()">Copy Raw Link</button>
+      </div>
+
+      <div class="grid">
+        <div class="mini"><b>File</b><span>config.json</span></div>
+        <div class="mini"><b>Status</b><span>Ready</span></div>
+      </div>
+    </section>
+
+    <section id="updateScreen" class="screen">
+      <div class="top">
+        <div>
+          <h2>Update</h2>
+          <p>Paste JSON / TXT / config</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <input id="version" placeholder="Version 1.0" />
+        <input id="notes" placeholder="Update notes" />
+        <textarea id="configBox" placeholder="Paste any config, json, txt here..."></textarea>
+        <button onclick="updateConfig()">Update Config</button>
+        <p id="updateMsg" class="msg"></p>
+      </div>
+    </section>
+
+    <nav id="taskbar" class="taskbar hidden">
+      <button onclick="showTab('homeScreen')" class="nav active">⌂<span>Home</span></button>
+      <button onclick="showTab('updateScreen')" class="nav">↻<span>Update</span></button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
